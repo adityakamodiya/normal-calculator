@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="normal_cl.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <section>
+            <div class="calculation-screen"></div>
+            <div class="keys">
+                <button class="clear" value="C">C</button>
+                <!-- <button class=""></button> -->
+                <button class="mod" value="%">%</button>
+                <button class="devide" value="/">/</button>
+                <button class="7" value="7">7</button>
+                <button class="8" value="8">8</button>
+                <button class="9" value="9">9</button>
+                <button class="multiply" value="*">*</button>
+                <button class="4" value="4">4</button>
+                <button class="5" value="5">5</button>
+                <button class="6" value="6">6</button>
+                <button class="minus" value="-">-</button>
+                <button class="1" value="1">1</button>
+                <button class="2" value="2">2</button>
+                <button class="3" value="3">3</button>
+                <button class="plus" value="+">+</button>
+                <!-- <button class=""></button> -->
+                <button class="0" value="0">0</button>
+                <button class="point" value=".">.</button>
+                <button class="equal" value="brabr">=</button>
+            </div>
+        </section>
+    </div>
+    <script>
+        let input = document.querySelector('input')
+        let calculation_screen = document.querySelector(".calculation-screen")
+        let buttons = document.querySelectorAll("button")
+        let equal = document.querySelector(".equal")
+        let clear = document.querySelector('.clear')
+        let mod = document.querySelector(".mod")
+        let devide = document.querySelector("devide")
+        let multiply = document.querySelector(".multiply")
+        let plus = document.querySelector(".plus")
+        let point = document.querySelector("point")
+
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].onclick = () => {
+                if (buttons[i].innerHTML === "=") {
+                    if (calculation_screen.innerHTML == '') {
+                        alert("write something")
+                    }
+                    else {
+                        cal(buttons[i])
+                    }
+                }
+                else {
+                    cal(buttons[i])
+                }
+            }
+        }
+
+        function cal(btn) {
+            if (btn.innerHTML === "=") {
+                calculation_screen.innerHTML = eval(calculation_screen.innerHTML)
+            }
+            else
+                calculation_screen.innerHTML += btn.value
+        }
+
+
+
+
+        // if(calculation_screen.innerHTML == '' )
+        // {
+        //     console.log('hi')
+        //     equal.onclick = ()=>{
+        //         alert('nothing to calculate')
+
+        //         cal()
+        //     }
+
+        // }
+
+        // cal()
+
+        // equal.onclick = () => {
+        //     if (calculation_screen.innerHTML === "")
+        //         alert("nothing to calclalte")
+        //     else {
+        //         cal()
+        //     }
+        // }
+
+        // function cal() {
+        //     for (let i = 0; i < buttons.length; i++) {
+
+        //         buttons[i].onclick = () => {
+
+
+
+        //             calculation_screen.innerHTML += buttons[i].value
+
+
+
+        //         }
+        //         equal.onclick = () => {
+        //             calculation_screen.innerHTML = eval(calculation_screen.innerHTML)
+        //         }
+
+
+        //         clear.onclick = () => {
+        //             calculation_screen.innerHTML = ""
+        //         }
+
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

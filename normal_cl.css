@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    height: 100vh;
+}
+section{
+    height: 500px;
+    width: 400px;
+    border: 1px solid;
+}
+section .calculation-screen{
+    height: 10%;
+    width: 100%;
+    border: 1px solid;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 1.5rem;
+}
+.keys{
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.keys button {
+    /* border: 1px solid; */
+    height: 20%;
+    width: 25%;
+    font-size: 1rem;
+}
